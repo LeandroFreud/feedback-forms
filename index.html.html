@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback - Clínica de Massoterapia</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <h2>Deixe seu Feedback</h2>
+    <form id="feedbackForm">
+        <label for="nome">Seu Nome:</label>
+        <input type="text" id="nome" required>
+        <label for="avaliacao">Como você avalia nosso atendimento?</label>
+        <select id="avaliacao" required>
+            <option value="Excelente">Excelente</option>
+            <option value="Bom">Bom</option>
+            <option value="Regular">Regular</option>
+            <option value="Ruim">Ruim</option>
+        </select>
+        <label for="comentario">Comentário (opcional):</label>
+        <textarea id="comentario" rows="4"></textarea>
+        <button type="button" onclick="enviarWhatsApp()">Enviar pelo WhatsApp</button>
+    </form>
+    <script src="assets/js/feedback.js"></script>
+</body>
+</html>
