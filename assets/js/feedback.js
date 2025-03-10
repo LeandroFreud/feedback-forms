@@ -1,9 +1,20 @@
 function enviarWhatsApp() {
-    let nome = document.getElementById("nome").value;
+    let nome = document.getElementById("nome").value.trim();
     let avaliacao = document.getElementById("avaliacao").value;
-    let comentario = document.getElementById("comentario").value;
-    let numeroWhatsApp = "31988326428";// Substitua pelo número da clínica (com DDD)
-    let mensagem = `Olá, meu nome é ${nome}.%0A Minha avaliação do atendimento foi: ${avaliacao}.%0A Comentário: ${comentario || "Nenhum"}`;
-    let url = `https://wa.me/${31988326428}?text=${mensagem}`;
+    let comentario = document.getElementById("comentario").value.trim();
+    const numeroWhatsApp = "31988326428"; // Substitua pelo número da clínica
+
+    // Validação do nome
+    if (!nome) {
+        alert("Por favor, preencha seu nome antes de enviar.");
+        return;
+    }
+
+    let mensagem = `Olá, meu nome é ${nome}.
+Minha avaliação do atendimento foi: ${avaliacao}.
+Comentário: ${comentario || "Nenhum"}`;
+
+    let url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
     window.open(url, "_blank");
 }
+
